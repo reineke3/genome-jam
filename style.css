@@ -271,49 +271,52 @@ footer {
   font-size: 1.5rem;
   color: #e63946;
 }
-/* DNA Helix with Curved Rungs */
 .helix-visual {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  margin: 2rem 0;
+  gap: 0.6rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background: radial-gradient(circle at center, #f0f4ff 0%, transparent 80%);
+  max-width: 300px;
 }
 
 .pair {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
   font-weight: 700;
   font-size: 1.2rem;
-  animation: twist 4s ease-in-out infinite;
+  animation: twist 6s ease-in-out infinite;
 }
 
 .base.left {
-  color: #3b82f6; /* blue */
-  transform: translateX(-12px);
+  color: #3b82f6;
+  transform: translateX(-10px);
 }
-
 .base.right {
-  color: #10b981; /* green */
-  transform: translateX(12px);
+  color: #10b981;
+  transform: translateX(10px);
 }
 
 .rung {
   width: 40px;
   height: 20px;
 }
-
 .rung path {
   stroke: #555;
   stroke-width: 2;
   fill: none;
 }
 
-/* Stagger pairs for zigzag effect */
-.pair:nth-child(even) .base.left { transform: translateX(-16px); }
-.pair:nth-child(even) .base.right { transform: translateX(16px); }
+/* Zigzag offset */
+.pair:nth-child(even) .base.left { transform: translateX(-14px); }
+.pair:nth-child(even) .base.right { transform: translateX(14px); }
 
-/* Gentle twisting animation */
+/* Twist animation */
 @keyframes twist {
   0%, 100% { transform: rotate(0deg); }
   50% { transform: rotate(3deg); }
