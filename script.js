@@ -86,3 +86,51 @@ function revealSticky() {
 
 window.addEventListener('scroll', revealSticky);
 window.addEventListener('load', revealSticky);
+
+// Quote Carousel Script
+const track = document.querySelector('.quote-track');
+const quotes = document.querySelectorAll('.quote-carousel blockquote');
+const prevBtn = document.querySelector('.nav.prev');
+const nextBtn = document.querySelector('.nav.next');
+
+let index = 0;
+let autoSlide;
+
+// Show quote at current index
+function showQuote(i) {
+  track.style.transform = `translateX(-${i * 100}%)`;
+}
+
+// Next/Prev controls
+function nextQuote() {
+  index = (index + 1) % quotes.length;
+  showQuote(index);
+}
+function prevQuote() {
+  index = (index - 1 + quotes.length) % quotes.length;
+  showQuote(index);
+}
+
+// Auto cycle
+function startAutoSlide() {
+  autoSlide = setInterval(nextQuote, 6000); // 6 seconds per quote
+}
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+// Event listeners for arrows
+nextBtn.addEventListener('click', () => {
+  stopAutoSlide();
+  nextQuote();
+  startAutoSlide();
+});
+prevBtn.addEventListener('click', () => {
+  stopAutoSlide();
+  prevQuote();
+  startAutoSlide();
+});
+
+// Initialize
+showQuote(index);
+startAutoSlide();
