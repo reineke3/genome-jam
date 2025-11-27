@@ -87,7 +87,7 @@ function revealSticky() {
 window.addEventListener('scroll', revealSticky);
 window.addEventListener('load', revealSticky);
 
-// Quote Carousel Script
+// --- Quote Carousel (fade version) ---
 document.addEventListener('DOMContentLoaded', () => {
   const quotes = document.querySelectorAll('.quote-carousel blockquote');
   const prevBtn = document.querySelector('.nav.prev');
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let index = 0;
   let autoSlideId = null;
-  const DURATION = 6000; // 6 seconds per quote
+  const DURATION = 6000;
 
   function showQuote(i) {
     quotes.forEach(q => q.classList.remove('active'));
@@ -120,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     stopAuto();
     autoSlideId = setInterval(nextQuote, DURATION);
   }
-
   function stopAuto() {
     if (autoSlideId) clearInterval(autoSlideId);
     autoSlideId = null;
@@ -132,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     nextQuote();
     startAuto();
   });
-
   prevBtn.addEventListener('click', () => {
     stopAuto();
     prevQuote();
