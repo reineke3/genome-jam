@@ -40,17 +40,6 @@ function burstConfetti(x = window.innerWidth / 2, y = 120, n = 80) {
 
 document.getElementById('celebrateBtn').addEventListener('click', () => burstConfetti());
 
-// --- Quote carousel (optional if you add quotes) ---
-let idx = 0;
-const quotes = Array.from(document.querySelectorAll('.quote'));
-if (quotes.length > 0) {
-  setInterval(() => {
-    quotes[idx].classList.remove('active');
-    idx = (idx + 1) % quotes.length;
-    quotes[idx].classList.add('active');
-  }, 4000);
-}
-
 // --- Gallery lightbox (optional if you add gallery images) ---
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
