@@ -271,28 +271,44 @@ footer {
   font-size: 1.5rem;
   color: #e63946;
 }
-/* DNA Helix Wave Accent */
-.helix {
+/* DNA Double Helix Accent */
+.helix.double {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #3b82f6; /* blue accent */
+  align-items: flex-start;
+  gap: 2rem;
   margin: 2rem 0;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
-.helix span {
+.strand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.strand.left span { color: #3b82f6; }   /* blue bases */
+.strand.right span { color: #10b981; }  /* green bases */
+
+.rungs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: #555;
+}
+
+/* Animation to mimic twisting */
+.strand span, .rungs span {
   display: inline-block;
-  animation: wave 2s ease-in-out infinite;
+  animation: twist 4s ease-in-out infinite;
 }
 
-/* Offset every other base for the helix twist */
-.helix span:nth-child(even) {
-  animation-delay: 1s;
+.strand.right span, .rungs span:nth-child(even) {
+  animation-delay: 2s; /* offset for helix effect */
 }
 
-@keyframes wave {
+@keyframes twist {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(6px); }
 }
