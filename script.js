@@ -88,11 +88,7 @@ window.addEventListener('scroll', revealSticky);
 window.addEventListener('load', revealSticky);
 
 // Quote Carousel Script
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.quote-track');
-  const quotes = document.querySelectorAll('.quote-carousel blockquote');
-  const prevBtn = document.querySelector('.nav.prev');
-  const nextBtn = document.querySelector('.nav.next');
+
 
   if (!track || quotes.length === 0 || !prevBtn || !nextBtn) {
     console.warn('Quote carousel elements not found.');
