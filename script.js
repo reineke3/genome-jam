@@ -88,19 +88,22 @@ window.addEventListener('scroll', revealSticky);
 window.addEventListener('load', revealSticky);
 
 // Quote Carousel Script
-
-
-  if (!track || quotes.length === 0 || !prevBtn || !nextBtn) {
-    console.warn('Quote carousel elements not found.');
-    return;
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  const quotes = document.querySelectorAll('.quote-carousel blockquote');
+  const prevBtn = document.querySelector('.nav.prev');
+  const nextBtn = document.querySelector('.nav.next');
+  const dots = document.querySelectorAll('.dot');
 
   let index = 0;
   let autoSlideId = null;
   const DURATION = 6000; // 6 seconds per quote
 
   function showQuote(i) {
-    track.style.transform = `translateX(-${i * 100}%)`;
+    quotes.forEach(q => q.classList.remove('active'));
+    quotes[i].classList.add('active');
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[i]) dots[i].classList.add('active');
   }
 
   function nextQuote() {
@@ -136,63 +139,6 @@ window.addEventListener('load', revealSticky);
     startAuto();
   });
 
-  // Optional: pause auto‑slide on hover
-  const carousel = document.querySelector('.quote-carousel');
-  carousel.addEventListener('mouseenter', stopAuto);
-  carousel.addEventListener('mouseleave', startAuto);
-
-  // Init
-  showQuote(index);
-  startAuto();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.quote-track');
-  const quotes = document.querySelectorAll('.quote-carousel blockquote');
-  const prevBtn = document.querySelector('.nav.prev');
-  const nextBtn = document.querySelector('.nav.next');
-  const dots = document.querySelectorAll('.dot');
-
-  let index = 0;
-  let autoSlideId = null;
-  const DURATION = 6000;
-
-  function showQuote(i) {
-    track.style.transform = `translateX(-${i * 100}%)`;
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[i].classList.add('active');
-  }
-
-  function nextQuote() {
-    index = (index + 1) % quotes.length;
-    showQuote(index);
-  }
-
-  function prevQuote() {
-    index = (index - 1 + quotes.length) % quotes.length;
-    showQuote(index);
-  }
-
-  function startAuto() {
-    stopAuto();
-    autoSlideId = setInterval(nextQuote, DURATION);
-  }
-  function stopAuto() {
-    if (autoSlideId) clearInterval(autoSlideId);
-    autoSlideId = null;
-  }
-
-  nextBtn.addEventListener('click', () => {
-    stopAuto();
-    nextQuote();
-    startAuto();
-  });
-  prevBtn.addEventListener('click', () => {
-    stopAuto();
-    prevQuote();
-    startAuto();
-  });
-
   // Dot navigation
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
@@ -203,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Init
   showQuote(index);
   startAuto();
 });
