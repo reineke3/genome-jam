@@ -88,49 +88,64 @@ window.addEventListener('scroll', revealSticky);
 window.addEventListener('load', revealSticky);
 
 // Quote Carousel Script
-const track = document.querySelector('.quote-track');
-const quotes = document.querySelectorAll('.quote-carousel blockquote');
-const prevBtn = document.querySelector('.nav.prev');
-const nextBtn = document.querySelector('.nav.next');
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.quote-track');
+  const quotes = document.querySelectorAll('.quote-carousel blockquote');
+  const prevBtn = document.querySelector('.nav.prev');
+  const nextBtn = document.querySelector('.nav.next');
 
-let index = 0;
-let autoSlide;
+  if (!track || quotes.length === 0 || !prevBtn || !nextBtn) {
+    console.warn('Quote carousel elements not found.');
+    return;
+  }
 
-// Show quote at current index
-function showQuote(i) {
-  track.style.transform = `translateX(-${i * 100}%)`;
-}
+  let index = 0;
+  let autoSlideId = null;
+  const DURATION = 6000; // 6 seconds per quote
 
-// Next/Prev controls
-function nextQuote() {
-  index = (index + 1) % quotes.length;
+  function showQuote(i) {
+    track.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  function nextQuote() {
+    index = (index + 1) % quotes.length;
+    showQuote(index);
+  }
+
+  function prevQuote() {
+    index = (index - 1 + quotes.length) % quotes.length;
+    showQuote(index);
+  }
+
+  function startAuto() {
+    stopAuto();
+    autoSlideId = setInterval(nextQuote, DURATION);
+  }
+
+  function stopAuto() {
+    if (autoSlideId) clearInterval(autoSlideId);
+    autoSlideId = null;
+  }
+
+  // Arrow controls
+  nextBtn.addEventListener('click', () => {
+    stopAuto();
+    nextQuote();
+    startAuto();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    stopAuto();
+    prevQuote();
+    startAuto();
+  });
+
+  // Optional: pause auto‑slide on hover
+  const carousel = document.querySelector('.quote-carousel');
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+
+  // Init
   showQuote(index);
-}
-function prevQuote() {
-  index = (index - 1 + quotes.length) % quotes.length;
-  showQuote(index);
-}
-
-// Auto cycle
-function startAutoSlide() {
-  autoSlide = setInterval(nextQuote, 6000); // 6 seconds per quote
-}
-function stopAutoSlide() {
-  clearInterval(autoSlide);
-}
-
-// Event listeners for arrows
-nextBtn.addEventListener('click', () => {
-  stopAutoSlide();
-  nextQuote();
-  startAutoSlide();
+  startAuto();
 });
-prevBtn.addEventListener('click', () => {
-  stopAutoSlide();
-  prevQuote();
-  startAutoSlide();
-});
-
-// Initialize
-showQuote(index);
-startAutoSlide();
