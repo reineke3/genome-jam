@@ -322,39 +322,39 @@ footer {
   50% { transform: rotate(3deg); }
 }
 
-/* Quote Carousel */
+/* Quote Carousel (fade version) */
 .quote-carousel {
   position: relative;
   width: 100%;
-  max-width: 700px;              /* wider container */
+  max-width: 700px;
   margin: 3rem auto;
-  overflow: hidden;              /* hides overflow from sliding quotes */
-  padding: 2rem 2.5rem;          /* extra padding for arrows */
+  overflow: hidden;
   border-left: 4px solid #3b82f6;
   background: #f9fafb;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  min-height: 160px;            /* optional: stabilizes height for longer quotes */
+  min-height: 160px; /* keeps height stable for longer quotes */
+  padding: 2rem 2.5rem;
 }
 
 .quote-track {
-  display: flex;
-  flex-direction: row;
-  width: 100%;                  /* ensures track matches container */
-  overflow: hidden;             /* prevents quote overlap */
-  transition: transform 0.6s ease-in-out;
+  position: relative; /* stack quotes on top of each other */
 }
 
 .quote-carousel blockquote {
-  flex-shrink: 0;
-  width: 100%;                  /* each quote fills the carousel */
-  min-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   margin: 0;
-  padding: 1rem;
-  box-sizing: border-box;       /* ensures padding doesn't overflow */
-  font-style: italic;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.quote-carousel blockquote.active {
+  opacity: 1;
+  position: relative; /* active one participates in layout for height */
 }
 
 .quote-carousel footer {
@@ -391,13 +391,13 @@ footer {
   width: 12px;
   height: 12px;
   margin: 0 6px;
-  background: #9ca3af;         /* darker grey for visibility */
+  background: #9ca3af;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s;
 }
 .dot.active {
-  background: #3b82f6;         /* bright blue for active dot */
+  background: #3b82f6;
 }
 .dot:hover {
   background: #2563eb;
