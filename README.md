@@ -17,9 +17,8 @@ It blends science and design into an interactive web experience, highlighting th
 
 ## 🚀 How to View
 This project is hosted via **GitHub Pages**.  
-Once published, you can access it at:
 
-https://reineke3.github.io/genome-jam/
+[![View on GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-brightgreen?style=for-the-badge&logo=github)](https://reineke3.github.io/genome-jam/)
 
 ---
 
