@@ -222,3 +222,31 @@ footer {
   font-size: 1.5rem;
   color: #e63946;
 }
+/* Sticky note animation */
+.sticky {
+  position: absolute;
+  top: 1rem;
+  right: -2rem;
+  width: 160px;
+  background: #fff9a8;
+  transform: rotate(-6deg);
+  padding: 1rem;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+  opacity: 0; /* start hidden */
+  transition: opacity 0.6s ease-out;
+}
+
+.sticky.show {
+  opacity: 1;
+  animation: wiggle 1.2s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(-6deg) translateY(0); }
+  25%  { transform: rotate(-4deg) translateY(-2px); }
+  50%  { transform: rotate(-6deg) translateY(0); }
+  75%  { transform: rotate(-8deg) translateY(2px); }
+  100% { transform: rotate(-6deg) translateY(0); }
+}
