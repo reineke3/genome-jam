@@ -349,12 +349,17 @@ footer {
   margin: 0;
   padding: 0;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  transform: scale(0.95); /* start slightly smaller */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .quote-carousel blockquote.active {
   opacity: 1;
-  position: relative; /* active one participates in layout for height */
+  transform: scale(1);   /* zoom to full size */
+  position: relative;    /* active one participates in layout for height */
 }
 
 .quote-carousel footer {
