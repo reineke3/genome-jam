@@ -201,6 +201,31 @@ footer {
   color: #555;
 }
 
+/* Notebook entry with paper texture */
+.notebook {
+  background: #fdfdfd;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  position: relative;
+
+  /* Subtle paper texture effect */
+  background-image:
+    linear-gradient(transparent 95%, rgba(0,0,0,0.04) 96%), /* faint horizontal lines */
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px); /* speckled noise */
+  background-size: 100% 24px, 20px 20px; /* spacing for lines + noise */
+}
+
+.notebook::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 2.5rem;
+  width: 2px;
+  background: rgba(255,0,0,0.2); /* faint red margin line */
+}
+
+
 /* Sticky note */
 .sticky {
   position: absolute;
