@@ -2,22 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Congratulations!</title>
+  <title>Genome‑Jam</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎉 Congratulations on Your Bioinformatics Master’s Thesis 🎉</h1>
-  <p>You’ve untangled the mysteries of RUNX1‑ETO and rewired networks with brilliance.</p>
+  <!-- Hero section -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>🎉 Genome‑Jam 🎉</h1>
+      <p class="subtitle">Rewiring gene regulatory networks in AML — a Bioinformatics journey.</p>
+      <button id="celebrateBtn" class="btn">Celebrate!</button>
+    </div>
+  </header>
 
-  <div class="helix">
-    <span>A</span><span>T</span>
-    <span>C</span><span>G</span>
-    <span>G</span><span>C</span>
-    <span>T</span><span>A</span>
-    <!-- Repeat to form helix -->
-  </div>
+  <main>
+    <!-- Abstract -->
+    <section class="abstract">
+      <h2>Thesis Abstract</h2>
+      <details>
+        <summary>Read the abstract</summary>
+        <p>
+          Acute Myeloid Leukaemia (AML) is an aggressive blood cancer caused by mutations…
+          <!-- paste full abstract here -->
+        </p>
+      </details>
+    </section>
 
-  <button id="celebrateBtn">Celebrate!</button>
+    <!-- Timeline -->
+    <section class="timeline">
+      <h2>Thesis Journey</h2>
+      <div class="steps">
+        <div class="step"><span class="badge">1</span><h3>Proposal</h3><p>Framing RUNX1‑ETO in AML.</p></div>
+        <div class="step"><span class="badge">2</span><h3>Data</h3><p>Chromatin accessibility, gene expression, ChIP‑Seq.</p></div>
+        <div class="step"><span class="badge">3</span><h3>Networks</h3><p>Disentangling RUNX1 vs RUNX1‑ETO control.</p></div>
+        <div class="step"><span class="badge">4</span><h3>Defense</h3><p>Sharing insights and celebrating.</p></div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+      <h2>Visualization Gallery</h2>
+      <div class="grid">
+        <figure>
+          <img src="assets/images/viz1.png" alt="ChIP‑Seq peak profile">
+          <figcaption>RUNX1‑ETO binding profile.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/viz2.png" alt="Regulatory network schematic">
+          <figcaption>Gene regulatory network schematic.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/viz3.png" alt="Expression heatmap">
+          <figcaption>Expression heatmap across AML subtypes.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Dedication -->
+    <section class="dedication">
+      <h2>Dedication</h2>
+      <p>To my wife: your rigor, curiosity, and heart rewired networks—and inspired everyone around you. I’m so proud.</p>
+    </section>
+
+    <!-- DNA Helix motif -->
+    <section class="helix">
+      <span>A</span><span>T</span>
+      <span>C</span><span>G</span>
+      <span>G</span><span>C</span>
+      <span>T</span><span>A</span>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with love by Monika.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
