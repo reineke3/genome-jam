@@ -271,3 +271,28 @@ footer {
   font-size: 1.5rem;
   color: #e63946;
 }
+/* DNA Helix Wave Accent */
+.helix {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #3b82f6; /* blue accent */
+  margin: 2rem 0;
+}
+
+.helix span {
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* Offset every other base for the helix twist */
+.helix span:nth-child(even) {
+  animation-delay: 1s;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
