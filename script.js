@@ -72,3 +72,17 @@ lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') lightbox.classList.remove('show');
 });
+// Reveal sticky note on scroll
+const sticky = document.querySelector('.sticky');
+
+function revealSticky() {
+  const triggerBottom = window.innerHeight * 0.85;
+  const boxTop = sticky.getBoundingClientRect().top;
+  if (boxTop < triggerBottom) {
+    sticky.classList.add('show');
+    window.removeEventListener('scroll', revealSticky); // run once
+  }
+}
+
+window.addEventListener('scroll', revealSticky);
+window.addEventListener('load', revealSticky);
