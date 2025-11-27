@@ -40,7 +40,7 @@ function burstConfetti(x = window.innerWidth / 2, y = 120, n = 80) {
 
 document.getElementById('celebrateBtn').addEventListener('click', () => burstConfetti());
 
-// --- Gallery lightbox (optional if you add gallery images) ---
+// --- Gallery lightbox ---
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
 lightbox.className = 'lightbox';
@@ -61,7 +61,8 @@ lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') lightbox.classList.remove('show');
 });
-// Reveal sticky note on scroll
+
+// --- Sticky note reveal ---
 const sticky = document.querySelector('.sticky');
 
 function revealSticky() {
