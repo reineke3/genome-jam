@@ -156,3 +156,69 @@ footer {
   60% { transform: scale(1.2); opacity: 1; }
   100% { transform: scale(1); }
 }
+/* Dedication section */
+.dedication {
+  position: relative;
+  padding: 2rem;
+  background: #fffdf7;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(30,42,56,0.06);
+}
+
+/* Notebook entry */
+.notebook {
+  background: #fdfdfd;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+}
+.notebook h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+.notebook ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.notebook li {
+  margin: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.notebook li::before {
+  content: "☑"; /* checked box */
+  position: absolute;
+  left: 0;
+  color: #10b981;
+}
+.notebook li.done {
+  text-decoration: line-through;
+  color: #555;
+}
+
+/* Sticky note */
+.sticky {
+  position: absolute;
+  top: 1rem;
+  right: -2rem;
+  width: 160px;
+  background: #fff9a8;
+  transform: rotate(-6deg);
+  padding: 1rem;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+}
+.sticky p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+.sticky .heart {
+  font-size: 1.5rem;
+  color: #e63946;
+}
