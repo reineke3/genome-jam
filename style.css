@@ -321,6 +321,7 @@ footer {
   0%, 100% { transform: rotate(0deg); }
   50% { transform: rotate(3deg); }
 }
+
 /* Quote Carousel */
 .quote-carousel {
   position: relative;
@@ -337,10 +338,13 @@ footer {
 
 .quote-track {
   display: flex;
+  flex-direction: row; /* critical for horizontal sliding */
   transition: transform 0.6s ease-in-out;
 }
 
 .quote-carousel blockquote {
+  flex-shrink: 0;
+  width: 100%;
   min-width: 100%;
   margin: 0;
   padding: 1rem;
@@ -369,6 +373,6 @@ footer {
   font-size: 1.2rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
-.nav.prev { left: -2rem; }
-.nav.next { right: -2rem; }
+.nav.prev { left: 0.5rem; }
+.nav.next { right: 0.5rem; }
 .nav:hover { background: #2563eb; }
