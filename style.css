@@ -321,3 +321,54 @@ footer {
   0%, 100% { transform: rotate(0deg); }
   50% { transform: rotate(3deg); }
 }
+/* Quote Carousel */
+.quote-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 3rem auto;
+  overflow: hidden;
+  padding: 1rem;
+  border-left: 4px solid #3b82f6;
+  background: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.quote-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.quote-carousel blockquote {
+  min-width: 100%;
+  margin: 0;
+  padding: 1rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.quote-carousel footer {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Navigation arrows */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.nav.prev { left: -2rem; }
+.nav.next { right: -2rem; }
+.nav:hover { background: #2563eb; }
