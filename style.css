@@ -271,44 +271,50 @@ footer {
   font-size: 1.5rem;
   color: #e63946;
 }
-/* DNA Double Helix Accent */
-.helix.double {
+/* DNA Helix with Curved Rungs */
+.helix-visual {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
   margin: 2rem 0;
+}
+
+.pair {
+  display: flex;
+  align-items: center;
   font-weight: 700;
   font-size: 1.2rem;
-}
-
-.strand {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.strand.left span { color: #3b82f6; }   /* blue bases */
-.strand.right span { color: #10b981; }  /* green bases */
-
-.rungs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  color: #555;
-}
-
-/* Animation to mimic twisting */
-.strand span, .rungs span {
-  display: inline-block;
   animation: twist 4s ease-in-out infinite;
 }
 
-.strand.right span, .rungs span:nth-child(even) {
-  animation-delay: 2s; /* offset for helix effect */
+.base.left {
+  color: #3b82f6; /* blue */
+  transform: translateX(-12px);
 }
 
+.base.right {
+  color: #10b981; /* green */
+  transform: translateX(12px);
+}
+
+.rung {
+  width: 40px;
+  height: 20px;
+}
+
+.rung path {
+  stroke: #555;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Stagger pairs for zigzag effect */
+.pair:nth-child(even) .base.left { transform: translateX(-16px); }
+.pair:nth-child(even) .base.right { transform: translateX(16px); }
+
+/* Gentle twisting animation */
 @keyframes twist {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
 }
