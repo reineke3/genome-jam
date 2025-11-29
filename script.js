@@ -41,25 +41,34 @@ function burstConfetti(x = window.innerWidth / 2, y = 120, n = 80) {
 document.getElementById('celebrateBtn').addEventListener('click', () => burstConfetti());
 
 // --- Gallery lightbox ---
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-lightbox.className = 'lightbox';
-lightbox.innerHTML = '<img id="lightboxImg" alt="">';
-document.body.appendChild(lightbox);
-
-const lightboxImg = document.getElementById('lightboxImg');
-
-document.querySelectorAll('.gallery img').forEach(img => {
+document.querySelectorAll('.lightbox-trigger').forEach(img => {
   img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add('show');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
+
+    lightbox.style.display = 'block';
+    lightboxImg.src = img.dataset.full;
+    caption.textContent = img.alt;
   });
 });
 
-lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') lightbox.classList.remove('show');
+document.querySelector('.lightbox .close').addEventListener('click', () => {
+  document.getElementById('lightbox').style.display = 'none';
+});
+
+// Close lightbox when clicking outside the image
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target.id === 'lightbox') {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+});
+
+// Close lightbox with ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.getElementById('lightbox').style.display = 'none';
+  }
 });
 
 // --- Sticky note reveal ---
@@ -140,34 +149,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init
   showQuote(index);
   startAuto();
-});
-// Lightbox functionality
-document.querySelectorAll('.lightbox-trigger').forEach(img => {
-  img.addEventListener('click', () => {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const caption = document.getElementById('lightbox-caption');
-
-    lightbox.style.display = 'block';
-    lightboxImg.src = img.dataset.full;
-    caption.textContent = img.alt;
-  });
-});
-
-document.querySelector('.lightbox .close').addEventListener('click', () => {
-  document.getElementById('lightbox').style.display = 'none';
-});
-
-// Close lightbox when clicking outside the image
-document.getElementById('lightbox').addEventListener('click', (e) => {
-  if (e.target.id === 'lightbox') {
-    document.getElementById('lightbox').style.display = 'none';
-  }
-});
-
-// Close lightbox with ESC key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.getElementById('lightbox').style.display = 'none';
-  }
 });
