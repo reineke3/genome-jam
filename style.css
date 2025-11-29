@@ -435,7 +435,23 @@ footer {
 }
 
 .message-card:hover {
-  transform: scale(1.05);
+  transform: rotate(-2deg) scale(1.05);
+  box-shadow: 4px 6px 12px rgba(0,0,0,0.25);
+}
+
+.message-card.pink:hover {
+  transform: rotate(2deg) scale(1.05);
+  box-shadow: 4px 6px 12px rgba(0,0,0,0.25);
+}
+
+.message-card.blue:hover {
+  transform: rotate(-1deg) scale(1.05);
+  box-shadow: 4px 6px 12px rgba(0,0,0,0.25);
+}
+
+.message-card.green:hover {
+  transform: rotate(1deg) scale(1.05);
+  box-shadow: 4px 6px 12px rgba(0,0,0,0.25);
 }
 
 .message-card p {
@@ -471,14 +487,4 @@ footer {
   border-radius: 8px;       /* soften corners to match sticky note vibe */
   margin-bottom: 0.6rem;    /* space between image and text */
   box-shadow: 1px 2px 6px rgba(0,0,0,0.15); /* subtle depth */
-}
-/* Apply hover zoom to all sticky note colors */
-.message-card:hover,
-.message-card.pink:hover,
-.message-card.blue:hover,
-.message-card.green:hover {
-  transform: scale(1.05);
-}
-.message-card {
-  transition: transform 0.3s ease;
 }
