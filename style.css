@@ -463,3 +463,12 @@ footer {
   border-radius: 8px;
   margin-bottom: 0.5rem;
 }
+/* Special styling for cards that include an image */
+.message-card.with-image img {
+  width: 100%;              /* fill the card’s width */
+  max-height: 120px;        /* cap the height so it doesn’t dominate */
+  object-fit: cover;        /* crop the image neatly if it’s taller/wider */
+  border-radius: 8px;       /* soften corners to match sticky note vibe */
+  margin-bottom: 0.6rem;    /* space between image and text */
+  box-shadow: 1px 2px 6px rgba(0,0,0,0.15); /* subtle depth */
+}
