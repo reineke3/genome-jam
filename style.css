@@ -497,3 +497,20 @@ footer {
   transform: scale(1.15); /* zoom in */
   box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* lift effect */
 }
+.references {
+  margin: 1rem 0 2rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+.references h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+.references ul {
+  list-style: none;
+  padding: 0;
+}
+.references li {
+  margin-bottom: 0.4rem;
+}
