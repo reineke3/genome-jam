@@ -407,3 +407,59 @@ footer {
 .dot:hover {
   background: #2563eb;
 }
+.messages {
+  margin: 3rem auto;
+  max-width: 1000px;
+  text-align: center;
+}
+.messages h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.message-card {
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+  background: #fff9a8; /* default yellow */
+}
+
+.message-card:hover {
+  transform: scale(1.05);
+}
+
+.message-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.message-card footer {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Color variations */
+.message-card.pink { background: #ffd6e0; transform: rotate(2deg); }
+.message-card.blue { background: #d0f0ff; transform: rotate(-1deg); }
+.message-card.green { background: #d7fdd1; transform: rotate(1deg); }
+
+/* Apple image card */
+.message-card.with-image img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
