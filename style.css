@@ -557,3 +557,6 @@ footer {
   color: #333;
   font-size: 0.95rem;
 }
+html {
+  scroll-behavior: smooth;
+}
