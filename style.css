@@ -514,3 +514,31 @@ footer {
 .references li {
   margin-bottom: 0.4rem;
 }
+/* Navigation bar */
+.navbar {
+  background: var(--accent);
+  padding: 0.8rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #dbeafe; /* lighter blue on hover */
+}
