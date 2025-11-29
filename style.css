@@ -542,3 +542,18 @@ footer {
 .navbar a:hover {
   color: #dbeafe; /* lighter blue on hover */
 }
+#glossary dl {
+  margin: 1rem 0;
+}
+
+#glossary dt {
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.8rem;
+}
+
+#glossary dd {
+  margin: 0.2rem 0 0.8rem 1rem;
+  color: #333;
+  font-size: 0.95rem;
+}
