@@ -109,13 +109,16 @@ figcaption {
   color: #445;
 }
 
-/* Dedication */
-.dedication p {
-  font-size: 1.05rem;
-  color: #334;
-  text-align: center;
-  font-style: italic;
+/* Master List */
+.masterlist {
+  position: relative;
+  padding: 2rem;
+  background: #fffdf7;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(30,42,56,0.06);
 }
+
 
 /* Helix motif */
 .helix {
