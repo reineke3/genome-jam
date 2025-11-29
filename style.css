@@ -472,3 +472,13 @@ footer {
   margin-bottom: 0.6rem;    /* space between image and text */
   box-shadow: 1px 2px 6px rgba(0,0,0,0.15); /* subtle depth */
 }
+/* Apply hover zoom to all sticky note colors */
+.message-card:hover,
+.message-card.pink:hover,
+.message-card.blue:hover,
+.message-card.green:hover {
+  transform: scale(1.05);
+}
+.message-card {
+  transition: transform 0.3s ease;
+}
