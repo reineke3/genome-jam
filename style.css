@@ -618,7 +618,7 @@ html {
   margin-top: 0.5rem;
 }
 body {
-  background-image: url('assets/dna-left.png'), url('assets/dna-right.png');
+  background-image: url('assets/images/dna-left.png'), url('assets/images/dna-right.png');
   background-position: left top, right top;
   background-repeat: repeat-y;
   background-size: 100px auto;
