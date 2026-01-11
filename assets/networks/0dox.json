@@ -1,1 +1,18 @@
-
+{
+  "elements": [
+    {
+      "data": {
+        "id": "RUNX1",
+        "label": "RUNX1",
+        "color": "#ff6666",
+        "size": 30
+      }
+    },
+    {
+      "data": {
+        "source": "RUNX1",
+        "target": "CEBPA"
+      }
+    }
+  ]
+}
