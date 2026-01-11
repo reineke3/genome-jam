@@ -163,7 +163,7 @@ Promise.all([
     if (cy) {
       cy.destroy();
     }
-
+console.log("Loaded network:", data);
     cy = cytoscape({
       container: document.getElementById("cy"),
       elements: data.elements,
@@ -191,7 +191,7 @@ Promise.all([
           }
         }
       ],
-      layout: { name: "cose", animate: true }
+    layout: { name: "grid" }
     });
   }
 
