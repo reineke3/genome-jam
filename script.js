@@ -155,8 +155,8 @@ let cy;
 let current = "0dox";
 
 Promise.all([
-  fetch("assets/networks/0dox.json").then(r => r.json()),
-  fetch("assets/networks/5dox.json").then(r => r.json())
+  fetch("assets/networks/0d0x.json").then(r => r.json()),
+  fetch("assets/networks/5d0x.json").then(r => r.json())
 ]).then(([net0, net5]) => {
 
   function loadNetwork(data) {
