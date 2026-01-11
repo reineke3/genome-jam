@@ -4,14 +4,100 @@
       "data": {
         "id": "RUNX1",
         "label": "RUNX1",
-        "color": "#ff6666",
-        "size": 30
+        "color": "#ff9999",
+        "size": 20
       }
     },
     {
       "data": {
+        "id": "RUNX1T1",
+        "label": "RUNX1T1",
+        "color": "#ff4444",
+        "size": 35
+      }
+    },
+    {
+      "data": {
+        "id": "KLF4",
+        "label": "KLF4",
+        "color": "#3b82f6",
+        "size": 28
+      }
+    },
+    {
+      "data": {
+        "id": "NFI",
+        "label": "NFI",
+        "color": "#10b981",
+        "size": 28
+      }
+    },
+    {
+      "data": {
+        "id": "PLAG1",
+        "label": "PLAG1",
+        "color": "#f59e0b",
+        "size": 28
+      }
+    },
+    {
+      "data": {
+        "id": "CEBPA",
+        "label": "CEBPA",
+        "color": "#8b5cf6",
+        "size": 18
+      }
+    },
+    {
+      "data": {
+        "id": "SPI1",
+        "label": "SPI1",
+        "color": "#8b5cf6",
+        "size": 18
+      }
+    },
+
+    /* --- RUNX1T1 edges (partial hub) --- */
+    {
+      "data": {
+        "source": "RUNX1T1",
+        "target": "KLF4"
+      }
+    },
+    {
+      "data": {
+        "source": "RUNX1T1",
+        "target": "NFI"
+      }
+    },
+    {
+      "data": {
+        "source": "RUNX1T1",
+        "target": "PLAG1"
+      }
+    },
+
+    /* --- RUNX1 weakened edges --- */
+    {
+      "data": {
         "source": "RUNX1",
         "target": "CEBPA"
+      }
+    },
+
+    /* --- Loss of SPI1 regulation (edge removed compared to 0Dox) --- */
+
+    /* --- Alternative regulatory edges --- */
+    {
+      "data": {
+        "source": "KLF4",
+        "target": "CEBPA"
+      }
+    },
+    {
+      "data": {
+        "source": "NFI",
+        "target": "SPI1"
       }
     }
   ]
