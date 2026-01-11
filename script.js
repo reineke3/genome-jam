@@ -221,15 +221,31 @@ ${d.description ?? ""}`;
   loadNetwork(net0);
 
   // Toggle button
-  document.getElementById("toggle-network").addEventListener("click", () => {
-    if (current === "0dox") {
-      current = "5dox";
-      loadNetwork(net5);
-      document.getElementById("toggle-network").textContent = "Switch to 0Dox";
-    } else {
-      current = "0dox";
-      loadNetwork(net0);
-      document.getElementById("toggle-network").textContent = "Switch to 5Dox";
-    }
+document.getElementById("toggle-network").addEventListener("click", () => {
+  const newData = current === "0dox" ? net5 : net0;
+  current = current === "0dox" ? "5dox" : "0dox";
+  document.getElementById("toggle-network").textContent =
+    current === "0dox" ? "Switch to 5Dox" : "Switch to 0Dox";
+
+  // Update elements without destroying Cytoscape
+  cy.json({ elements: newData.elements });
+
+  // Reapply layout with animation
+  cy.layout({
+    name: "concentric",
+    animate: true,
+    animationDuration: 1000,
+    concentric: node => node.data("size"),
+    levelWidth: () => 10,
+    minNodeSpacing: 20
+  }).run();
+
+  // Reapply tooltips
+  cy.nodes().forEach(node => {
+    const d = node.data();
+    node._private.data.title = `${d.label}
+logFC: ${d.logFC ?? "n/a"}
+Motif: ${d.motif ?? "n/a"}
+${d.description ?? ""}`;
   });
 });
