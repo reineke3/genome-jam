@@ -168,30 +168,54 @@ console.log("Loaded network:", data);
       container: document.getElementById("cy"),
       elements: data.elements,
       style: [
-        {
-          selector: "node",
-          style: {
-            "background-color": "data(color)",
-            "label": "data(label)",
-            "font-size": "8px",
-            "width": "data(size)",
-            "height": "data(size)",
-            "text-valign": "center",
-            "color": "#333"
-          }
-        },
-        {
-          selector: "edge",
-          style: {
-            "line-color": "#bbb",
-            "target-arrow-shape": "triangle",
-            "target-arrow-color": "#bbb",
-            "curve-style": "bezier",
-            "width": 1
-          }
-        }
+{
+  selector: "node",
+  style: {
+    "background-color": "data(color)",
+    "label": "data(label)",
+    "font-size": "8px",
+    "width": "data(size)",
+    "height": "data(size)",
+    "text-valign": "center",
+    "color": "#333",
+    "title": function(ele) {
+      const d = ele.data();
+      return `${d.label}
+logFC: ${d.logFC ?? "n/a"}
+Motif: ${d.motif ?? "n/a"}
+${d.description ?? ""}`;
+    }
+  }
+}
+
+{
+  selector: "edge",
+  style: {
+    "line-color": "#888",
+    "target-arrow-shape": "triangle",
+    "target-arrow-color": "#555",
+    "curve-style": "bezier",
+"width": "mapData(strength, 0, 1, 1, 6)"
+    "arrow-scale": 1.4,
+    "opacity": 0.9
+  }
+}
+
       ],
-    layout: { name: "grid" }
+layout: {
+  name: "concentric",
+  animate: true,
+  animationDuration: 800,
+
+  // Bigger nodes closer to the center
+  concentric: node => node.data("size"),
+
+  // Controls spacing between rings
+  levelWidth: () => 10,
+
+  // Nice spacing
+  minNodeSpacing: 20
+}
     });
   }
 
