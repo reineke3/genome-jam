@@ -167,41 +167,41 @@ console.log("Loaded network:", data);
     cy = cytoscape({
       container: document.getElementById("cy"),
       elements: data.elements,
-      style: [
-{
-  selector: "node",
-  style: {
-    "background-color": "data(color)",
-    "label": "data(label)",
-    "font-size": "8px",
-    "width": "data(size)",
-    "height": "data(size)",
-    "text-valign": "center",
-    "color": "#333",
-    "title": function(ele) {
-      const d = ele.data();
-      return `${d.label}
+style: [
+  {
+    selector: "node",
+    style: {
+      "background-color": "data(color)",
+      "label": "data(label)",
+      "font-size": "8px",
+      "width": "data(size)",
+      "height": "data(size)",
+      "text-valign": "center",
+      "color": "#333",
+      "title": function(ele) {
+        const d = ele.data();
+        return `${d.label}
 logFC: ${d.logFC ?? "n/a"}
 Motif: ${d.motif ?? "n/a"}
 ${d.description ?? ""}`;
+      }
+    }
+  },
+
+  {
+    selector: "edge",
+    style: {
+      "line-color": "#888",
+      "target-arrow-shape": "triangle",
+      "target-arrow-color": "#555",
+      "curve-style": "bezier",
+      "width": 2.5,
+      "arrow-scale": 1.4,
+      "opacity": 0.9
     }
   }
-}
-
-{
-  selector: "edge",
-  style: {
-    "line-color": "#888",
-    "target-arrow-shape": "triangle",
-    "target-arrow-color": "#555",
-    "curve-style": "bezier",
-"width": "mapData(strength, 0, 1, 1, 6)"
-    "arrow-scale": 1.4,
-    "opacity": 0.9
-  }
-}
-
-      ],
+],
+      
 layout: {
   name: "concentric",
   animate: true,
