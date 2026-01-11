@@ -177,14 +177,7 @@ style: [
       "width": "data(size)",
       "height": "data(size)",
       "text-valign": "center",
-      "color": "#333",
-      "title": function(ele) {
-        const d = ele.data();
-        return `${d.label}
-logFC: ${d.logFC ?? "n/a"}
-Motif: ${d.motif ?? "n/a"}
-${d.description ?? ""}`;
-      }
+      "color": "#333"
     }
   },
 
@@ -206,17 +199,22 @@ layout: {
   name: "concentric",
   animate: true,
   animationDuration: 800,
-
-  // Bigger nodes closer to the center
   concentric: node => node.data("size"),
-
-  // Controls spacing between rings
   levelWidth: () => 10,
-
-  // Nice spacing
   minNodeSpacing: 20
 }
     });
+
+
+// ⭐ Add tooltips here
+cy.nodes().forEach(node => {
+  const d = node.data();
+  node._private.data.title = `${d.label}
+logFC: ${d.logFC ?? "n/a"}
+Motif: ${d.motif ?? "n/a"}
+${d.description ?? ""}`;
+});
+
   }
 
   // Load initial network
