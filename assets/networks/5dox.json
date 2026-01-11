@@ -80,12 +80,12 @@
       }
     ],
     "edges": [
-      { "data": { "source": "RUNX1T1", "target": "KLF4" } },
-      { "data": { "source": "RUNX1T1", "target": "NFI" } },
-      { "data": { "source": "RUNX1T1", "target": "PLAG1" } },
-      { "data": { "source": "RUNX1", "target": "CEBPA" } },
-      { "data": { "source": "KLF4", "target": "CEBPA" } },
-      { "data": { "source": "NFI", "target": "SPI1" } }
+      { "data": { "id": "e1", "source": "RUNX1T1", "target": "KLF4" } },
+      { "data": { "id": "e2", "source": "RUNX1T1", "target": "NFI" } },
+      { "data": { "id": "e3", "source": "RUNX1T1", "target": "PLAG1" } },
+      { "data": { "id": "e4", "source": "RUNX1", "target": "CEBPA" } },
+      { "data": { "id": "e5", "source": "KLF4", "target": "CEBPA" } },
+      { "data": { "id": "e6", "source": "NFI", "target": "SPI1" } }
     ]
   }
 }
