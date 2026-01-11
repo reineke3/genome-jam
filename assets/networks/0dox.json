@@ -1,71 +1,67 @@
 {
-  "elements": [
-    {
-      "data": {
-        "id": "RUNX1",
-        "label": "RUNX1",
-        "color": "#ff6666",
-        "size": 40,
-        "logFC": 1.8,
-        "motif": "Runt domain",
-        "description": "Master regulator of hematopoiesis"
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "RUNX1",
+          "label": "RUNX1",
+          "color": "#ff6666",
+          "size": 40,
+          "logFC": 1.8,
+          "motif": "Runt domain",
+          "description": "Master regulator of hematopoiesis"
+        }
+      },
+      {
+        "data": {
+          "id": "CEBPA",
+          "label": "CEBPA",
+          "color": "#3b82f6",
+          "size": 28,
+          "logFC": 1.2,
+          "motif": "bZIP",
+          "description": "Key regulator of myeloid differentiation"
+        }
+      },
+      {
+        "data": {
+          "id": "SPI1",
+          "label": "SPI1",
+          "color": "#10b981",
+          "size": 28,
+          "logFC": 0.9,
+          "motif": "ETS",
+          "description": "Essential for myeloid and B‑cell development"
+        }
+      },
+      {
+        "data": {
+          "id": "GATA2",
+          "label": "GATA2",
+          "color": "#f59e0b",
+          "size": 28,
+          "logFC": 1.1,
+          "motif": "GATA zinc‑finger",
+          "description": "Controls hematopoietic stem cell maintenance"
+        }
+      },
+      {
+        "data": {
+          "id": "ERG",
+          "label": "ERG",
+          "color": "#8b5cf6",
+          "size": 28,
+          "logFC": 0.7,
+          "motif": "ETS",
+          "description": "Transcription factor involved in hematopoiesis"
+        }
       }
-    },
-    {
-      "data": {
-        "id": "CEBPA",
-        "label": "CEBPA",
-        "color": "#3b82f6",
-        "size": 28,
-        "logFC": 1.2,
-        "motif": "bZIP",
-        "description": "Key regulator of myeloid differentiation"
-      }
-    },
-    {
-      "data": {
-        "id": "SPI1",
-        "label": "SPI1",
-        "color": "#10b981",
-        "size": 28,
-        "logFC": 0.9,
-        "motif": "ETS",
-        "description": "Essential for myeloid and B‑cell development"
-      }
-    },
-    {
-      "data": {
-        "id": "GATA2",
-        "label": "GATA2",
-        "color": "#f59e0b",
-        "size": 28,
-        "logFC": 1.1,
-        "motif": "GATA zinc‑finger",
-        "description": "Controls hematopoietic stem cell maintenance"
-      }
-    },
-    {
-      "data": {
-        "id": "ERG",
-        "label": "ERG",
-        "color": "#8b5cf6",
-        "size": 28,
-        "logFC": 0.7,
-        "motif": "ETS",
-        "description": "Transcription factor involved in hematopoiesis"
-      }
-    },
-    {
-      "data": { "source": "RUNX1", "target": "CEBPA" }
-    },
-    {
-      "data": { "source": "RUNX1", "target": "SPI1" }
-    },
-    {
-      "data": { "source": "RUNX1", "target": "GATA2" }
-    },
-    {
-      "data": { "source": "RUNX1", "target": "ERG" }
-    }
-  ]
+    ],
+    "edges": [
+      { "data": { "source": "RUNX1", "target": "CEBPA" } },
+      { "data": { "source": "RUNX1", "target": "SPI1" } },
+      { "data": { "source": "RUNX1", "target": "GATA2" } },
+      { "data": { "source": "RUNX1", "target": "ERG" } }
+    ]
+  }
 }
