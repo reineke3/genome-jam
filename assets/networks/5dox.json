@@ -56,8 +56,6 @@
         "size": 18
       }
     },
-
-    /* --- RUNX1T1 edges (partial hub) --- */
     {
       "data": {
         "source": "RUNX1T1",
@@ -76,18 +74,12 @@
         "target": "PLAG1"
       }
     },
-
-    /* --- RUNX1 weakened edges --- */
     {
       "data": {
         "source": "RUNX1",
         "target": "CEBPA"
       }
     },
-
-    /* --- Loss of SPI1 regulation (edge removed compared to 0Dox) --- */
-
-    /* --- Alternative regulatory edges --- */
     {
       "data": {
         "source": "KLF4",
