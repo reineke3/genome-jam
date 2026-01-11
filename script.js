@@ -150,3 +150,64 @@ document.addEventListener('DOMContentLoaded', () => {
   showQuote(index);
   startAuto();
 });
+
+let cy;
+let current = "0dox";
+
+Promise.all([
+  fetch("assets/networks/0dox.json").then(r => r.json()),
+  fetch("assets/networks/5dox.json").then(r => r.json())
+]).then(([net0, net5]) => {
+
+  function loadNetwork(data) {
+    if (cy) {
+      cy.destroy();
+    }
+
+    cy = cytoscape({
+      container: document.getElementById("cy"),
+      elements: data.elements,
+      style: [
+        {
+          selector: "node",
+          style: {
+            "background-color": "data(color)",
+            "label": "data(label)",
+            "font-size": "8px",
+            "width": "data(size)",
+            "height": "data(size)",
+            "text-valign": "center",
+            "color": "#333"
+          }
+        },
+        {
+          selector: "edge",
+          style: {
+            "line-color": "#bbb",
+            "target-arrow-shape": "triangle",
+            "target-arrow-color": "#bbb",
+            "curve-style": "bezier",
+            "width": 1
+          }
+        }
+      ],
+      layout: { name: "cose", animate: true }
+    });
+  }
+
+  // Load initial network
+  loadNetwork(net0);
+
+  // Toggle button
+  document.getElementById("toggle-network").addEventListener("click", () => {
+    if (current === "0dox") {
+      current = "5dox";
+      loadNetwork(net5);
+      document.getElementById("toggle-network").textContent = "Switch to 0Dox";
+    } else {
+      current = "0dox";
+      loadNetwork(net0);
+      document.getElementById("toggle-network").textContent = "Switch to 5Dox";
+    }
+  });
+});
