@@ -5,7 +5,10 @@
         "id": "RUNX1",
         "label": "RUNX1",
         "color": "#ff9999",
-        "size": 20
+        "size": 20,
+        "logFC": -2.1,
+        "motif": "Runt domain",
+        "description": "RUNX1 expression is suppressed under RUNX1‑ETO induction"
       }
     },
     {
@@ -13,7 +16,10 @@
         "id": "RUNX1T1",
         "label": "RUNX1T1",
         "color": "#ff4444",
-        "size": 35
+        "size": 35,
+        "logFC": 3.4,
+        "motif": "ETO family",
+        "description": "RUNX1‑ETO fusion protein; rewires transcriptional programs in AML"
       }
     },
     {
@@ -21,7 +27,10 @@
         "id": "KLF4",
         "label": "KLF4",
         "color": "#3b82f6",
-        "size": 28
+        "size": 28,
+        "logFC": 1.7,
+        "motif": "Zinc‑finger",
+        "description": "Induced by RUNX1‑ETO; influences differentiation and proliferation"
       }
     },
     {
@@ -29,7 +38,10 @@
         "id": "NFI",
         "label": "NFI",
         "color": "#10b981",
-        "size": 28
+        "size": 28,
+        "logFC": 1.3,
+        "motif": "NFI family",
+        "description": "Activated downstream of KLF4; contributes to altered gene programs"
       }
     },
     {
@@ -37,7 +49,10 @@
         "id": "PLAG1",
         "label": "PLAG1",
         "color": "#f59e0b",
-        "size": 28
+        "size": 28,
+        "logFC": 2.0,
+        "motif": "C2H2 zinc‑finger",
+        "description": "Upregulated by RUNX1‑ETO; associated with oncogenic transcription"
       }
     },
     {
@@ -45,7 +60,10 @@
         "id": "CEBPA",
         "label": "CEBPA",
         "color": "#8b5cf6",
-        "size": 18
+        "size": 18,
+        "logFC": -1.4,
+        "motif": "bZIP",
+        "description": "CEBPA is partially repressed in RUNX1‑ETO conditions"
       }
     },
     {
@@ -53,44 +71,29 @@
         "id": "SPI1",
         "label": "SPI1",
         "color": "#8b5cf6",
-        "size": 18
+        "size": 18,
+        "logFC": -0.9,
+        "motif": "ETS",
+        "description": "SPI1 expression is reduced; affects myeloid lineage commitment"
       }
     },
     {
-      "data": {
-        "source": "RUNX1T1",
-        "target": "KLF4"
-      }
+      "data": { "source": "RUNX1T1", "target": "KLF4" }
     },
     {
-      "data": {
-        "source": "RUNX1T1",
-        "target": "NFI"
-      }
+      "data": { "source": "RUNX1T1", "target": "NFI" }
     },
     {
-      "data": {
-        "source": "RUNX1T1",
-        "target": "PLAG1"
-      }
+      "data": { "source": "RUNX1T1", "target": "PLAG1" }
     },
     {
-      "data": {
-        "source": "RUNX1",
-        "target": "CEBPA"
-      }
+      "data": { "source": "RUNX1", "target": "CEBPA" }
     },
     {
-      "data": {
-        "source": "KLF4",
-        "target": "CEBPA"
-      }
+      "data": { "source": "KLF4", "target": "CEBPA" }
     },
     {
-      "data": {
-        "source": "NFI",
-        "target": "SPI1"
-      }
+      "data": { "source": "NFI", "target": "SPI1" }
     }
   ]
 }
